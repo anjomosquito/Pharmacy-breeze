@@ -28,16 +28,29 @@ const showingNavigationDropdown = ref(false);
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
-                                    Dashboard
-                                </NavLink>
+                            <nav class="bg-gray-50 dark:bg-gray-700">
+                            <div class="max-w-screen-x100 px-5 py-6 mx-auto">
+                                <div class="flex items-center">
+                                    <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
+                                        <li>
+                                            <a :href="route('dashboard')" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Dashboard</a>
+                                        </li>
+                                        <li>
+                                            <a :href="route('masterlist')" class="text-gray-900 dark:text-white hover:underline">Masterlist</a>
+                                        </li>
+                                        <li>
+                                            <a :href="route('medicine')" class="text-gray-900 dark:text-white hover:underline">Medicines</a>
+                                        </li>
+                                        <li>
+                                            <a :href="route('inventory')" class="text-gray-900 dark:text-white hover:underline">Invemtory</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <!--<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                                <NavLink :href="route('masterlist')" :active="route().current('masterlist')">
-                                    Masterlist
-                                </NavLink>
-                            </div>-->
+                        </nav>
+                        
+                            
+                            
                         </div>
 
                         <div class="hidden sm:flex sm:items-center sm:ms-6">

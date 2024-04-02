@@ -1,7 +1,8 @@
 <script setup>
 import { computed } from 'vue';
 import { Link } from '@inertiajs/vue3';
-//import Masterlist from '@/Components/Masterlist.vue';
+
+
 
 const props = defineProps({
     href: {

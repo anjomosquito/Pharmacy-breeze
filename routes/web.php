@@ -19,8 +19,16 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/masterlist', function () {
-    return Inertia::render('Masterlist');
-})->middleware(['auth', 'verified'])->name('masterlist');
+    return Inertia::render('Admin/Components/Masterlist');
+})->name('masterlist');
+
+Route::get('/medicine', function () {
+    return Inertia::render('Admin/Components/Medicine');
+})->name('medicine');
+
+Route::get('/inventory', function () {
+    return Inertia::render('Admin/Components/Inventory');
+})->name('inventory');
 
 
 Route::middleware('auth')->group(function () {

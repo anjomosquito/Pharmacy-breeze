@@ -23,8 +23,10 @@ Route::get('/masterlist', function () {
 })->name('masterlist');
 
 Route::get('/medicine', function () {
-    return Inertia::render('Admin/Components/Medicine');
+    return Inertia::render('Admin/Components/Medicine/Medicine');
 })->name('medicine');
+
+
 
 Route::get('/inventory', function () {
     return Inertia::render('Admin/Components/Inventory');
@@ -36,5 +38,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+
 
 require __DIR__.'/auth.php';

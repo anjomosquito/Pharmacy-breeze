@@ -13,37 +13,58 @@ const showingNavigationDropdown = ref(false);
 <template>
     <div>
         <div class="min-h-screen bg-gray-100">
-            <nav class="bg-white border-b border-gray-100">
+            <nav class="relative flex flex-wrap justify-between px-6 py-3 bg-white-500 mb-2">
+                    
+
                 <!-- Primary Navigation Menu -->
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto px-6 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
-                            <div class="shrink-0 flex items-center">
+                            <div class=" flex items-center">
                                 <Link :href="route('dashboard')">
-                                    <ApplicationLogo
-                                        class="block h-9 w-auto fill-current text-gray-800"
-                                    />
+                                <ApplicationLogo
+                                class="block h-12 w-auto fill-current text-gray-800"
+                                />
                                 </Link>
                             </div>
 
-                            <!-- Navigation Links -->
-                            <nav class="bg-gray-50 dark:bg-gray-700">
+                            <!--<div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                             <div class="max-w-screen-x100 px-5 py-6 mx-auto">
+                                <NavLink :href="route('dashboard')" :active="route().current('dashboard')">
+                                    Dashboard
+                                </NavLink>-->
+
+                            <!-- Navigation Links -->
+                            <nav class="bg-white-50 dark:bg-white-700">
+                            <div class="max-w-screen-x100 px-24 py-5 mx-auto">
                                 <div class="flex items-center">
-                                    <ul class="flex flex-row font-medium mt-0 space-x-8 rtl:space-x-reverse text-sm">
-                                        <li>
-                                            <a :href="route('dashboard')" class="text-gray-900 dark:text-white hover:underline" aria-current="page">Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a :href="route('masterlist')" class="text-gray-900 dark:text-white hover:underline">Masterlist</a>
-                                        </li>
-                                        <li>
-                                            <a :href="route('medicine')" class="text-gray-900 dark:text-white hover:underline">Medicines</a>
-                                        </li>
-                                        <li>
-                                            <a :href="route('inventory')" class="text-gray-900 dark:text-white hover:underline">Invemtory</a>
-                                        </li>
+                                    <ul class="flex flex-row font-medium mt-0 space-x-10 rtl:space-x-reverse text-lg">
+                                            <li>
+                                                <div class="flex items-center">
+                                                    <img src="puremed/dashboard.png" alt="Logo" class="block h-8 w-auto fill-current text-gray-800" />
+                                                    <a :href="route('dashboard')" class="text-gray-900 dark:text-white hover:underline ml-2">Dashboard</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="flex items-center">
+                                                    <img src="puremed/masterlist.png" alt="Logo" class="block h-8 w-auto fill-current text-gray-800" />
+                                                    <a :href="route('masterlist')" class="text-gray-900 dark:text-white hover:underline ml-2">Masterlist</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="flex items-center">
+                                                    <img src="puremed/medicine.png" alt="Logo" class="block h-8 w-auto fill-current text-gray-800" />
+                                                    <a :href="route('medicine')" class="text-gray-900 dark:text-white hover:underline ml-2">Medicines</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="flex items-center">
+                                                    <img src="puremed/inventory.png" alt="Logo" class="block h-8 w-auto fill-current text-gray-800" />
+                                                    <a :href="route('inventory')" class="text-gray-900 dark:text-white hover:underline ml-2">Inventory</a>
+                                                </div>
+                                            </li>
+
                                     </ul>
                                 </div>
                             </div>
@@ -145,6 +166,7 @@ const showingNavigationDropdown = ref(false);
                         </div>
 
                         <div class="mt-3 space-y-1">
+                            <KButton :theme-color="'primary'" :fill-mode="'flat'">Browse</KButton>
                             <ResponsiveNavLink :href="route('profile.edit')"> Profile </ResponsiveNavLink>
                             <ResponsiveNavLink :href="route('logout')" method="post" as="button">
                                 Log Out
